@@ -1,66 +1,50 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import FeatureSection from '@/components/FeatureSection';
+import StatsSection from '@/components/StatsSection';
+import ProjectGallery from '@/components/ProjectGallery';
+import MarqueeSection from '@/components/MarqueeSection';
+import Footer from '@/components/Footer';
+import FloatingLeaves from '@/components/FloatingLeaves';
+import ServicesSection from '@/components/ServicesSection';
+import SpicesGallery from '@/components/SpicesGallery';
+import WorkWithUs from '@/components/WorkWithUs';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{
+      backgroundColor: '#F8FAF9', // Very subtle off-white/green tint
+      minHeight: '300vh',
+      position: 'relative'
+    }}>
+      <FloatingLeaves />
+      <Navbar />
+      <Hero />
+      <MarqueeSection />
+      <FeatureSection
+        title="Harmonious Living"
+        description="Discover a lifestyle where modern luxury seamlessly blends with the raw beauty of nature."
+        image="/assets/feature_tea_plantation_1768250471986.png"
+        align="left"
+      />
+      <ServicesSection />
+      <SpicesGallery />
+      <StatsSection />
+      <FeatureSection
+        title="Intricate Details"
+        description="Every leaf, every drop of dew, tells a story of the ecosystem we preserve."
+        image="/assets/feature_macro_leaf_1768250487898.png"
+        align="right"
+      />
+      <WorkWithUs />
+      <FeatureSection
+        title="Community First"
+        description="Empowering local communities to become stewards of their own land, creating a cycle of prosperity."
+        image="/assets/planting_hands_1768272883340.png"
+        align="left"
+      />
+      <ProjectGallery />
+      <Footer />
+    </main>
   );
 }
