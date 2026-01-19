@@ -7,19 +7,25 @@ export default function WorkWithUs() {
         <section className="container section" style={{ paddingBottom: '0' }}>
             <div style={{
                 background: 'var(--color-primary-dark)',
-                borderRadius: '32px',
+                borderRadius: 'var(--border-radius-lg)',
                 overflow: 'hidden',
-                color: 'var(--color-primary-light)',
+                color: 'var(--color-text-light)', // Keep light text on this dark card
                 position: 'relative',
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', // Responsive Grid
                 minHeight: '500px'
             }}>
-                <div style={{ padding: '6rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 1 }}>
-                    <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', lineHeight: 1.1 }}>
+                <div style={{
+                    padding: 'clamp(3rem, 5vw, 6rem)', // Responsive padding
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    zIndex: 1
+                }}>
+                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
                         Work with <br /> <span className="serif-italic" style={{ color: 'var(--color-accent)' }}>Nature's Best</span>
                     </h2>
-                    <p style={{ opacity: 0.8, marginBottom: '3rem', maxWidth: '400px', fontSize: '1.1rem' }}>
+                    <p style={{ opacity: 0.9, marginBottom: '3rem', maxWidth: '400px', fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)' }}>
                         Join our mission to restore biodiversity and create sustainable ecosystems. We are always looking for passionate partners and team members.
                     </p>
                     <motion.a
@@ -31,7 +37,7 @@ export default function WorkWithUs() {
                         style={{
                             background: 'white',
                             color: 'var(--color-primary-dark)',
-                            padding: '1.2rem 2.5rem',
+                            padding: '1rem 2rem',
                             borderRadius: '50px',
                             textDecoration: 'none',
                             fontWeight: 600,
@@ -48,7 +54,7 @@ export default function WorkWithUs() {
                     </motion.a>
                 </div>
 
-                <div style={{ position: 'relative', height: '100%', minHeight: '300px' }}>
+                <div style={{ position: 'relative', height: '100%', minHeight: '350px' }}>
                     <Image
                         src="/assets/sustainable_community_1768272920507.png"
                         alt="Work with us"
@@ -58,7 +64,7 @@ export default function WorkWithUs() {
                     <div style={{
                         position: 'absolute',
                         inset: 0,
-                        background: 'linear-gradient(to right, rgba(1, 50, 32, 1), transparent)',
+                        background: 'linear-gradient(to right, rgba(1, 50, 32, 0.8), transparent)', // Adjusted gradient for better blend
                     }} />
                 </div>
             </div>

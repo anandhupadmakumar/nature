@@ -25,13 +25,13 @@ const projects = [
         title: "High Altitude Preservation",
         location: "Himalayas, Nepal",
         image: "/assets/misty_mountains_1768272938607.png",
-        size: "wide"
+        size: "large"
     }
 ];
 
 export default function ProjectGallery() {
     return (
-        <section className="container section">
+        <section className="container section" style={{ marginBottom: '2rem',  }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -44,12 +44,7 @@ export default function ProjectGallery() {
                 </p>
             </motion.div>
 
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(12, 1fr)',
-                gap: '2rem',
-                autoRows: 'minmax(300px, auto)'
-            }}>
+            <div className="gallery-grid">
                 {projects.map((project, index) => (
                     <motion.div
                         key={index}
@@ -57,9 +52,8 @@ export default function ProjectGallery() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: index * 0.1 }}
                         viewport={{ once: true, margin: "-10%" }}
+                        className={`gallery-card ${project.size === 'large' ? 'span-large' : project.size === 'wide' ? 'span-wide' : 'span-small'}`}
                         style={{
-                            gridColumn: project.size === 'large' ? 'span 8' : project.size === 'wide' ? 'span 12' : 'span 4',
-                            gridRow: project.size === 'large' ? 'span 2' : 'span 1',
                             position: 'relative',
                             borderRadius: '16px',
                             overflow: 'hidden',
@@ -76,24 +70,64 @@ export default function ProjectGallery() {
                         <div style={{
                             position: 'absolute',
                             inset: 0,
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                            background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, transparent 100%)', // Stronger gradient
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'flex-end',
                             padding: '2rem',
                             color: 'white'
                         }}>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{project.title}</h3>
-                            <p style={{ fontSize: '0.9rem', opacity: 0.9, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{project.location}</p>
+                            <h3 style={{
+                                fontSize: '1.5rem',
+                                marginBottom: '0.5rem',
+                                textShadow: '0 2px 4px rgba(0,0,0,0.3)', // Added shadow
+                                color: 'white' // Force explicit white
+                            }}>
+                                {project.title}
+                            </h3>
+                            <p style={{
+                                fontSize: '0.9rem',
+                                opacity: 1, // Full opacity
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em',
+                                textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                                color: 'white'
+                            }}>
+                                {project.location}
+                            </p>
                         </div>
                     </motion.div>
                 ))}
             </div>
             <style jsx global>{`
-        .hover-scale:hover {
-          transform: scale(1.05) !important;
-        }
-      `}</style>
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
+                    gap: 2rem;
+                    auto-rows: minmax(300px, auto);
+                }
+
+                .span-large { grid-column: span 8; }
+                .span-wide { grid-column: span 12; }
+                .span-small { grid-column: span 4; }
+                
+                .hover-scale:hover {
+                    transform: scale(1.05) !important;
+                }
+
+                @media (max-width: 768px) {
+                    .gallery-grid {
+                        display: flex; /* Stack on mobile */
+                        flex-direction: column;
+                        gap: 1.5rem;
+                    }
+                    
+                    .span-large, .span-wide, .span-small {
+                        grid-column: auto;
+                        width: 100%;
+                    }
+                }
+            `}</style>
         </section>
     );
 }

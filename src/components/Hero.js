@@ -4,20 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Component for the "Masked Slide Up" text reveal effect
-const TextReveal = ({ children, delay = 0, className = "" }) => {
-    return (
-        <div style={{ overflow: 'hidden' }} className={className}>
-            <motion.div
-                initial={{ y: "110%" }}
-                animate={{ y: "0%" }}
-                transition={{ duration: 1, delay: delay, ease: [0.16, 1, 0.3, 1] }} // Premium "Apple-like" easing
-            >
-                {children}
-            </motion.div>
-        </div>
-    );
-};
+import TextReveal from './TextReveal';
 
 export default function Hero() {
     const containerRef = useRef(null);
@@ -30,7 +17,7 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <div ref={containerRef} style={{ height: '100vh', width: '100%', position: 'relative', overflow: 'hidden' }}>
+        <div ref={containerRef} style={{ height: '100vh', width: '100%', position: 'relative', overflow: 'hidden', background: 'var(--color-primary-darker)' }}>
             {/* Background Image with Parallax */}
             <motion.div style={{ y, opacity, width: '100%', height: '110%', position: 'absolute', top: 0, left: 0 }}>
                 <div style={{ width: '100%', height: '100%', position: 'relative' }}>
@@ -41,11 +28,20 @@ export default function Hero() {
                         style={{ objectFit: 'cover', objectPosition: 'center' }}
                         priority
                     />
-                    {/* Gradient Overlay for Text Readability */}
+                    {/* Gradient Overlay for Text Readability - Darkened for White Theme Contrast */}
                     <div style={{
                         position: 'absolute',
                         inset: 0,
-                        background: 'linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.1) 100%)'
+                        background: 'linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 100%)'
+                    }} />
+                    {/* Additional bottom gradient to fade into white content smoothly (optional, but good for professional look) */}
+                    <div style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '150px',
+                        background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.2))'
                     }} />
                 </div>
             </motion.div>
@@ -55,29 +51,41 @@ export default function Hero() {
                 position: 'relative',
                 zIndex: 10,
                 height: '100%',
+                minHeight: '100vh', // Ensure full height but allow growth
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'flex-start', // Left alignment
+                alignItems: 'flex-start',
                 color: 'var(--color-text-light)',
-                paddingTop: 'var(--header-height)'
+                paddingTop: 'var(--header-height)',
+                paddingBottom: '4rem' // Add bottom padding for safety
             }}>
                 <div style={{ maxWidth: '900px', marginBottom: '1.5rem' }}>
-                    <TextReveal delay={0.2}>
-                        <h1 style={{ lineHeight: 1.1, margin: 0 }}>
-                            Growing <span className="serif-italic" style={{ color: '#ffffff' }}>Nature’s Best</span>,
+                    <TextReveal immediate={true} wind={true}>
+                        <h1 style={{
+                            fontSize: 'clamp(3rem, 10vw, 5.5rem)', // Responsive font size
+                            lineHeight: 1.1,
+                            margin: 0,
+                            color: '#ffffff'
+                        }}>
+                            Growing <span className="serif-italic" style={{ color: 'var(--color-accent)' }}>Nature’s Best</span>,
                         </h1>
                     </TextReveal>
-                    <TextReveal delay={0.3}>
-                        <h1 style={{ lineHeight: 1.1, margin: 0 }}>
+                    <TextReveal delay={0.2} immediate={true} wind={true}>
+                        <h1 style={{
+                            fontSize: 'clamp(3rem, 10vw, 5.5rem)', // Responsive font size
+                            lineHeight: 1.1,
+                            margin: 0,
+                            color: '#ffffff'
+                        }}>
                             For Generations Ahead.
                         </h1>
                     </TextReveal>
                 </div>
 
                 <div style={{ maxWidth: '500px', marginBottom: '2.5rem' }}>
-                    <TextReveal delay={0.5}>
-                        <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6 }}>
+                    <TextReveal delay={0.4} immediate={true}>
+                        <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
                             We believe in sustainable farming practices that honor the earth
                             and provide the purest produce for your table.
                         </p>
@@ -89,7 +97,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
                 >
-                    <Link href="#work-with-us" className="btn-primary" style={{ textDecoration: 'none' }}>
+                    <Link href="#contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
                         <span>Work with us</span>
                         {/* Simple Arrow Icon */}
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,6 +112,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
+                className="hidden-mobile" // Hide on very small screens to save space? Or keep it. keeping for now but check height.
                 style={{
                     position: 'absolute',
                     bottom: '2rem',
@@ -135,6 +144,6 @@ export default function Hero() {
                     />
                 </div>
             </motion.div>
-        </div>
+        </div >
     );
 }

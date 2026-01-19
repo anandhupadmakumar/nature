@@ -31,7 +31,7 @@ const ServiceCard = ({ title, description, image, delay }) => {
                 <h3 style={{
                     fontSize: '1.5rem',
                     fontWeight: 600,
-                    color: 'var(--color-text-light)',
+                    color: 'var(--color-text-main)', // Dark text
                     marginBottom: '0.5rem',
                     fontFamily: 'var(--font-heading)'
                 }}>
@@ -39,7 +39,7 @@ const ServiceCard = ({ title, description, image, delay }) => {
                 </h3>
                 <p style={{
                     fontSize: '1rem',
-                    color: 'rgba(255,255,255,0.7)',
+                    color: 'var(--color-text-secondary)', // Secondary dark text
                     lineHeight: 1.6
                 }}>
                     {description}
@@ -79,7 +79,7 @@ export default function ServicesSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                         style={{
-                            color: 'var(--color-secondary)',
+                            color: 'var(--color-primary-dark)', // Green accent
                             fontWeight: 700,
                             fontSize: '0.9rem',
                             letterSpacing: '0.1em',
@@ -98,7 +98,7 @@ export default function ServicesSection() {
                         style={{
                             fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                             lineHeight: 1.1,
-                            color: 'var(--color-text-light)'
+                            color: 'var(--color-text-main)' // Dark text
                         }}
                     >
                         Natural Space Solutions Tailored for You

@@ -41,7 +41,7 @@ export default function StatsSection() {
     ];
 
     return (
-        <section className="section" style={{ background: 'var(--color-primary-dark)', color: 'var(--color-primary-light)' }}>
+        <section className="section" style={{ background: 'var(--color-primary-dark)', color: 'white' ,marginBottom: '2rem'}}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', textAlign: 'center' }}>
                 {stats.map((stat, index) => (
                     <motion.div

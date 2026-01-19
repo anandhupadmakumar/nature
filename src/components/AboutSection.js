@@ -4,21 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Reusing the same Reveal effect for consistency
-const TextReveal = ({ children, delay = 0, className = "" }) => {
-    return (
-        <div style={{ overflow: 'hidden' }} className={className}>
-            <motion.div
-                initial={{ y: "110%" }}
-                whileInView={{ y: "0%" }}
-                viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 1, delay: delay, ease: [0.16, 1, 0.3, 1] }}
-            >
-                {children}
-            </motion.div>
-        </div>
-    );
-};
+import TextReveal from './TextReveal';
 
 export default function AboutSection() {
     const containerRef = useRef(null);
@@ -44,7 +30,7 @@ export default function AboutSection() {
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     maxWidth: '800px',
-                    marginBottom: '4rem'
+                    marginBottom: '2rem' // Reduced from 4rem
                 }}>
                     <TextReveal>
                         <span style={{
@@ -63,18 +49,18 @@ export default function AboutSection() {
                     <TextReveal delay={0.1}>
                         <h2 style={{
                             fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                            marginBottom: '1.5rem',
+                            marginBottom: '0rem',
                             lineHeight: 1.1,
-                            color: 'var(--color-text-light)'
+                            color: 'var(--color-text-main)' // Dark Text
                         }}>
                             Expert Landscaping,<br />
                             Personalized for You
                         </h2>
                     </TextReveal>
 
-                    <div style={{ maxWidth: '600px', marginBottom: '2rem' }}>
+                    <div style={{ maxWidth: '600px', marginBottom: '1rem' }}>
                         <TextReveal delay={0.2}>
-                            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
+                            <p style={{ fontSize: '1.25rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                                 At Greengrove, we create beautiful, functional outdoor spaces with care and expertise.
                                 From design to maintenance, our team delivers professional landscaping solutions
                                 tailored to your home, ensuring every garden looks its best year-round.
@@ -98,7 +84,7 @@ export default function AboutSection() {
                     width: '100vw',
                     marginLeft: 'calc(-50vw + 50%)', // Break out of container
                     overflow: 'hidden',
-                    paddingBottom: '2rem',
+                    paddingBottom: '0rem',
                     maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
                 }}>
                     <div className="marquee-track">
@@ -107,7 +93,7 @@ export default function AboutSection() {
                             <div
                                 key={index}
                                 style={{
-                                    minWidth: '350px',
+                                    minWidth: 'clamp(250px, 80vw, 350px)', // Responsive width
                                     height: '500px',
                                     position: 'relative',
                                     borderRadius: 'var(--border-radius-lg)',

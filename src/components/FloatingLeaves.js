@@ -17,23 +17,21 @@ export default function FloatingLeaves() {
     const [leaves, setLeaves] = useState([]);
 
     const colors = [
-        '#2E8B57', // SeaGreen
-        '#3CB371', // MediumSeaGreen
-        '#556B2F', // DarkOliveGreen
-        '#6B8E23', // OliveDrab
+        '#A8C6A5', // Sage Green (Lighter)
         '#8FBC8F', // DarkSeaGreen
-        '#013220', // Dark Green
-        '#DAA520', // GoldenRod (Autumn accent)
+        '#9DC183', // Asparagus (Muted)
+        '#E5D5C0', // Champagne (Accent)
+        '#B7D2B6', // Pale Green
     ];
 
     useEffect(() => {
         // Generate random leaves on client side to avoid hydration mismatch
-        const generatedLeaves = Array.from({ length: 20 }).map((_, i) => ({
+        const generatedLeaves = Array.from({ length: 15 }).map((_, i) => ({ // Reduced count from 20 to 15
             id: i,
             x: Math.random() * 100,
             y: Math.random() * 100,
             rotate: Math.random() * 360,
-            scale: 0.5 + Math.random() * 1,
+            scale: 0.5 + Math.random() * 0.8, // Slightly smaller scale
             duration: 15 + Math.random() * 20,
             delay: Math.random() * 5,
             color: colors[Math.floor(Math.random() * colors.length)]

@@ -15,10 +15,10 @@ export default function MarqueeSection() {
 
     return (
         <section style={{
-            padding: '6rem 0',
-            background: 'linear-gradient(to bottom, #F0F4F2, #E6ECEA)', // Subtle organic gradient
-            borderTop: '1px solid rgba(1, 50, 32, 0.05)',
-            borderBottom: '1px solid rgba(1, 50, 32, 0.05)',
+            padding: '4rem 0', // Reduced padding from 6rem
+            background: 'var(--color-bg-secondary)', // Use theme secondary bg (light gray)
+            borderTop: '1px solid rgba(0, 0, 0, 0.05)',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
             position: 'relative'
         }}>
             <div className="container" style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -26,8 +26,9 @@ export default function MarqueeSection() {
                     fontSize: '0.75rem',
                     textTransform: 'uppercase',
                     letterSpacing: '0.2em',
-                    color: 'var(--color-primary-dark)',
-                    opacity: 0.6
+                    color: 'var(--color-primary-dark)', // Green text
+                    opacity: 0.8,
+                    fontWeight: 600
                 }}>
                     Trusted by Global Leaders
                 </span>
@@ -42,23 +43,29 @@ export default function MarqueeSection() {
             }}>
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                    style={{ display: 'flex', gap: '6rem', width: 'fit-content', paddingLeft: '6rem' }}
+                    transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} // Slower duration for elegance
+                    style={{ display: 'flex', gap: '5rem', width: 'fit-content', paddingLeft: '5rem', alignItems: 'center' }}
                 >
                     {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
                         <span key={index} style={{
-                            fontSize: '2.5rem',
+                            fontSize: '2rem', // Slightly smaller
                             fontWeight: 600,
-                            color: 'var(--color-primary-dark)',
-                            opacity: 0.4,
+                            color: 'var(--color-text-main)', // Dark text for white theme
+                            opacity: 0.6, // Higher opacity
                             fontFamily: partner.font,
                             fontStyle: partner.font.includes('serif') ? 'italic' : 'normal',
                             whiteSpace: 'nowrap',
                             cursor: 'default',
-                            transition: 'opacity 0.3s ease'
+                            transition: 'all 0.3s ease'
                         }}
-                            onMouseEnter={(e) => e.target.style.opacity = '1'}
-                            onMouseLeave={(e) => e.target.style.opacity = '0.4'}
+                            onMouseEnter={(e) => {
+                                e.target.style.opacity = '1';
+                                e.target.style.color = 'var(--color-primary-dark)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.opacity = '0.6';
+                                e.target.style.color = 'var(--color-text-main)';
+                            }}
                         >
                             {partner.name}
                         </span>
