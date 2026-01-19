@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Navbar() {
     return (
@@ -16,31 +17,49 @@ export default function Navbar() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '0 2rem',
+                padding: '0 3rem',
                 zIndex: 50,
-                color: 'var(--color-primary-light)',
-                mixBlendMode: 'difference' // Cool premium effect against light/dark backgrounds
+                color: 'var(--color-text-light)',
             }}
         >
-            <div style={{ fontWeight: 600, fontSize: '1.25rem', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ width: '12px', height: '12px', background: 'currentColor', borderRadius: '50%' }}></div>
-                Greengrove.
-            </div>
+            {/* Logo */}
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 700,
+                    fontSize: '1.5rem',
+                    letterSpacing: '-0.02em'
+                }}>
+                    Nature's Best<span style={{ color: '#ffffff' }}>.</span>
+                </div>
+            </Link>
 
-            <button style={{
-                background: 'rgba(255,255,255,0.1)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '50px',
-                color: 'white',
-                cursor: 'pointer',
-                fontSize: '0.9rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
+            {/* Navigation Links */}
+            <div style={{
+                display: 'flex',
+                gap: '2.5rem',
+                alignItems: 'center',
+                fontFamily: 'var(--font-sans)',
+                fontSize: '0.95rem',
+                fontWeight: 500
             }}>
-                Menu
-            </button>
+                {['About', 'Services', 'Works'].map((item) => (
+                    <Link key={item} href={`#${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit', opacity: 0.8, transition: 'opacity 0.2s' }}>
+                        {item}
+                    </Link>
+                ))}
+
+                <Link href="#contact" style={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    border: '1px solid rgba(255,255,255,0.3)',
+                    padding: '0.6rem 1.4rem',
+                    borderRadius: 'var(--border-radius-pill)',
+                    transition: 'all 0.3s ease'
+                }}>
+                    Contact
+                </Link>
+            </div>
         </motion.nav>
     );
 }

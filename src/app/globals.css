@@ -1,25 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Color Palette */
-  --color-primary-dark: #013220;
-  --color-primary-light: #FFFFFF;
-  --color-accent: #E5D5C0; /* Subtle champagne/gold for accents */
+  /* Color Palette - Target Site Replication */
+  --color-primary-dark: #006838;
+  /* Deep Forest Green */
+  --color-primary-darker: #0f2a1f;
+  /* Dark Earthy Green */
+  --color-accent: #E5D5C0;
+  /* Subtle champagne */
   --color-text-dark: #0a0a0a;
-  --color-text-light: #f5f5f5;
-  --color-overlay: rgba(0, 0, 0, 0.4);
+  --color-text-light: #ffffff;
+  --color-text-off-white: #e0e0e0;
+  --color-text-dim: rgba(255, 255, 255, 0.6);
+  --color-overlay: rgba(0, 0, 0, 0.2);
 
   /* Typography */
-  --font-sans: 'Manrope', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Satoshi', 'Inter', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
 
   /* Spacing & Layout */
-  --container-max-width: 1400px;
-  --section-padding: 8rem 2rem;
-  --header-height: 80px;
+  --container-max-width: 1320px;
+  --section-padding: 6rem 2rem;
+  --header-height: 90px;
+  --border-radius-lg: 30px;
+  --border-radius-pill: 50px;
 
   /* Animation defaults */
-  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -29,27 +37,40 @@
 }
 
 html,
-body,
-#root {
+body {
   width: 100%;
-  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: var(--color-primary-light);
-  color: var(--color-text-dark);
+  background-color: var(--color-primary-darker);
+  color: var(--color-text-light);
   font-family: var(--font-sans);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography Utilities */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+}
+
+p {
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text-off-white);
 }
 
 .serif-italic {
@@ -58,21 +79,44 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-.text-dark { color: var(--color-text-dark); }
-.text-light { color: var(--color-text-light); }
+.text-highlight {
+  color: var(--color-text-light);
+}
 
 /* Layout Utilities */
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .section {
   padding: var(--section-padding);
 }
 
-/* Hide scrollbar for Lenis but keep functionality */
+/* Button Styles similar to target */
+.btn-primary {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-pill);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Smooth Scroll Lenis Fixes */
 html.lenis {
   height: auto;
 }

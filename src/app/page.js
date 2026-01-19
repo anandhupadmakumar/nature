@@ -1,11 +1,9 @@
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import AboutSection from '@/components/AboutSection';
 import FeatureSection from '@/components/FeatureSection';
 import StatsSection from '@/components/StatsSection';
 import ProjectGallery from '@/components/ProjectGallery';
-import MarqueeSection from '@/components/MarqueeSection';
 import Footer from '@/components/Footer';
-import FloatingLeaves from '@/components/FloatingLeaves';
 import ServicesSection from '@/components/ServicesSection';
 import SpicesGallery from '@/components/SpicesGallery';
 import WorkWithUs from '@/components/WorkWithUs';
@@ -13,14 +11,13 @@ import WorkWithUs from '@/components/WorkWithUs';
 export default function Home() {
   return (
     <main style={{
-      backgroundColor: '#F8FAF9', // Very subtle off-white/green tint
+      backgroundColor: 'var(--color-primary-darker)',
       minHeight: '300vh',
       position: 'relative'
     }}>
-      <FloatingLeaves />
-      <Navbar />
       <Hero />
-      <MarqueeSection />
+      <AboutSection />
+      <ServicesSection />
       <FeatureSection
         title="Harmonious Living"
         description="Discover a lifestyle where modern luxury seamlessly blends with the raw beauty of nature."

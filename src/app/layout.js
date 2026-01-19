@@ -1,9 +1,10 @@
 import "./globals.css";
 import SmoothScroll from '@/components/SmoothScroll';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
-  title: 'Greengrove - Premium Nature Experience',
-  description: 'Experience the finest nature retreats.',
+  title: 'Nature\'s Best - Premium Nature Experience',
+  description: 'Growing Nature\'s Best, For Generations Ahead.',
 };
 
 export default function RootLayout({ children }) {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <SmoothScroll>
+          <Navbar />
           {children}
         </SmoothScroll>
       </body>
