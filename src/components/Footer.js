@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
     return (
         <footer style={{
@@ -7,6 +9,14 @@ export default function Footer() {
             textAlign: 'center'
         }}>
             <div className="container">
+                <div style={{ position: 'relative', width: '80px', height: '80px', margin: '0 auto 1.5rem' }}>
+                    <Image
+                        src="/assets/logo.jpeg"
+                        alt="Greengrove Logo"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '50%' }}
+                    />
+                </div>
                 <h2 className="serif-italic" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Greengrove.</h2>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', opacity: 0.8 }}>
                     <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Experiences</a>

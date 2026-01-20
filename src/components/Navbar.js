@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -61,13 +62,24 @@ export default function Navbar() {
                     <div style={{
                         fontFamily: 'var(--font-sans)',
                         fontWeight: 700,
-                        fontSize: '1.5rem',
                         letterSpacing: '-0.02em',
                         display: 'flex',
-                        alignItems: 'center',
                         gap: '4px'
                     }}>
-                        Nature's Best<span style={{ color: 'var(--color-primary-dark)' }}>.</span>
+                        {/* <div style={{ position: 'relative', width: '40px', height: '40px', marginRight: '0.5rem' }}>
+                            <Image
+                                src="/assets/logo.jpeg"
+                                alt="Logo"
+                                fill
+                                style={{
+                                    objectFit: 'contain',
+                                    borderRadius: '50%', // Optional: if it's square/round
+                                    // Filter logic: Invert when transparent (trying to make it white), None when scrolled
+                                    filter: scrolled || mobileMenuOpen ? 'none' : 'brightness(0) invert(1)'
+                                }}
+                            />
+                        </div> */}
+                        <span className="serif-italic" style={{ color: 'inherit', fontSize: '1.2rem' }}>Nature's Best</span><span style={{ color: 'var(--color-primary-dark)' }}>.</span>
                     </div>
                 </Link>
 
@@ -138,10 +150,10 @@ export default function Navbar() {
                         />
                     </div>
                 </button>
-            </div>
+            </div >
 
             {/* Mobile Menu Overlay */}
-            <AnimatePresence>
+            < AnimatePresence >
                 {mobileMenuOpen && (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -215,8 +227,9 @@ export default function Navbar() {
                             </Link>
                         </motion.div>
                     </motion.div>
-                )}
-            </AnimatePresence>
+                )
+                }
+            </AnimatePresence >
         </motion.nav >
     );
 }

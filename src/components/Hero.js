@@ -61,17 +61,17 @@ export default function Hero() {
                 paddingBottom: '4rem' // Add bottom padding for safety
             }}>
                 <div style={{ maxWidth: '900px', marginBottom: '1.5rem' }}>
-                    <TextReveal immediate={true} wind={true}>
+                    <TextReveal immediate={true}>
                         <h1 style={{
                             fontSize: 'clamp(3rem, 10vw, 5.5rem)', // Responsive font size
                             lineHeight: 1.1,
                             margin: 0,
                             color: '#ffffff'
                         }}>
-                            Growing <span className="serif-italic" style={{ color: 'var(--color-accent)' }}>Nature’s Best</span>,
+                            Growing <span className="serif-italic">Nature’s Best</span>,
                         </h1>
                     </TextReveal>
-                    <TextReveal delay={0.2} immediate={true} wind={true}>
+                    <TextReveal delay={0.2} immediate={true}>
                         <h1 style={{
                             fontSize: 'clamp(3rem, 10vw, 5.5rem)', // Responsive font size
                             lineHeight: 1.1,

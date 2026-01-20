@@ -31,7 +31,7 @@ const projects = [
 
 export default function ProjectGallery() {
     return (
-        <section className="container section" style={{ marginBottom: '2rem',  }}>
+        <section className="container section" style={{ marginBottom: '2rem', }}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

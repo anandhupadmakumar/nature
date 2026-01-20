@@ -5,6 +5,9 @@ import Navbar from '@/components/Navbar';
 export const metadata = {
   title: 'Nature\'s Best - Premium Nature Experience',
   description: 'Growing Nature\'s Best, For Generations Ahead.',
+  icons: {
+    icon: '/assets/logo.jpeg',
+  },
 };
 
 export default function RootLayout({ children }) {
