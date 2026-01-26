@@ -28,7 +28,7 @@
 
   /* Typography */
   --font-sans: 'Satoshi', 'Inter', sans-serif;
-  --font-serif: 'Libre Baskerville', serif;
+  --font-serif: 'Satoshi', 'Inter', sans-serif;
 
   /* Spacing & Layout */
   --container-max-width: 1320px;

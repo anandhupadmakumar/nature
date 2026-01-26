@@ -64,21 +64,19 @@ export default function Navbar() {
                         fontWeight: 700,
                         letterSpacing: '-0.02em',
                         display: 'flex',
+                        alignItems: 'center',
                         gap: '4px'
                     }}>
-                        {/* <div style={{ position: 'relative', width: '40px', height: '40px', marginRight: '0.5rem' }}>
+                        <div style={{ position: 'relative', width: '50px', height: '50px', marginRight: '0.5rem' }}>
                             <Image
-                                src="/assets/logo.jpeg"
+                                src={scrolled || mobileMenuOpen ? "/assets/logo.jpeg" : "/assets/logo_white.png"}
                                 alt="Logo"
                                 fill
                                 style={{
-                                    objectFit: 'contain',
-                                    borderRadius: '50%', // Optional: if it's square/round
-                                    // Filter logic: Invert when transparent (trying to make it white), None when scrolled
-                                    filter: scrolled || mobileMenuOpen ? 'none' : 'brightness(0) invert(1)'
+                                    objectFit: 'contain'
                                 }}
                             />
-                        </div> */}
+                        </div>
                         <span className="serif-bold-white" style={{ color: 'inherit', fontSize: '1.2rem' }}>Nature's Best</span><span style={{ color: 'var(--color-primary-dark)' }}>.</span>
                     </div>
                 </Link>
@@ -98,9 +96,15 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    <Link href="#contact" className="btn-primary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.9rem' }}>
+                    <a
+                        href="https://wa.me/918089775753?text=Hi, I'd like to reach out to Nature's Best."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                        style={{ padding: '0.6rem 1.4rem', fontSize: '0.9rem', textDecoration: 'none' }}
+                    >
                         Contact
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile Hamburger */}
@@ -217,14 +221,16 @@ export default function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
-                            <Link
-                                href="#contact"
+                            <a
+                                href="https://wa.me/918089775753?text=Hi, I'd like to reach out to Nature's Best."
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="btn-primary"
-                                style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}
+                                style={{ fontSize: '1.2rem', padding: '1rem 3rem', textDecoration: 'none' }}
                             >
                                 Contact Us
-                            </Link>
+                            </a>
                         </motion.div>
                     </motion.div>
                 )

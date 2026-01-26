@@ -22,8 +22,8 @@ export default function WorkWithUs() {
                     justifyContent: 'center',
                     zIndex: 1
                 }}>
-                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
-                        Work with <br /> <span className="serif-bold-white">Nature's Best</span>
+                    <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1, }}>
+                        <span className="serif-bold-white">  Work with <br />Nature's Best</span>
                     </h2>
                     <p style={{ opacity: 0.9, marginBottom: '3rem', maxWidth: '400px', fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)' }}>
                         Join our mission to restore biodiversity and create sustainable ecosystems. We are always looking for passionate partners and team members.
@@ -31,7 +31,7 @@ export default function WorkWithUs() {
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        href="https://wa.me/911234567890?text=Hi, I'm interested in working with Greengrove."
+                        href="https://wa.me/918089775753?text=Hi, I'm interested in working with Greengrove."
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

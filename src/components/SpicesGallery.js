@@ -65,7 +65,7 @@ export default function SpicesGallery() {
                                     boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
                                     cursor: 'pointer'
                                 }}>
-                                    <a href={`https://wa.me/911234567890?text=I would like to order ${spice.name}`} target="_blank" rel="noopener noreferrer">
+                                    <a href={`https://wa.me/918089775753?text=I would like to order ${spice.name}`} target="_blank" rel="noopener noreferrer">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <path d="M5 12h14M12 5l7 7-7 7" />
                                         </svg>

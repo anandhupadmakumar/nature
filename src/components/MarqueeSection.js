@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 export default function MarqueeSection() {
     const partners = [
         { name: "EcoWorld", font: "var(--font-sans)" },
-        { name: "GreenFuture", font: "var(--font-serif)" }, // Mixed fonts for "logo" look
+        { name: "GreenFuture", font: "var(--font-sans)" },
         { name: "SustainLife", font: "var(--font-sans)" },
-        { name: "PureEarth", font: "var(--font-serif)" },
+        { name: "PureEarth", font: "var(--font-sans)" },
         { name: "ForestGuardian", font: "var(--font-sans)" },
-        { name: "WildReserve", font: "var(--font-serif)" },
+        { name: "WildReserve", font: "var(--font-sans)" },
         { name: "NatureTrust", font: "var(--font-sans)" },
-        { name: "BioSphere", font: "var(--font-serif)" }
+        { name: "BioSphere", font: "var(--font-sans)" }
     ];
 
     return (

@@ -60,7 +60,7 @@ export default function Hero() {
                 paddingTop: 'var(--header-height)',
                 paddingBottom: '4rem' // Add bottom padding for safety
             }}>
-                <div style={{ maxWidth: '900px', marginBottom: '1.5rem' }}>
+                <div style={{ maxWidth: '1000px', marginBottom: '1.5rem' }}>
                     <TextReveal immediate={true}>
                         <h1 style={{
                             fontSize: 'clamp(3rem, 10vw, 5.5rem)', // Responsive font size
@@ -78,7 +78,8 @@ export default function Hero() {
                             margin: 0,
                             color: '#ffffff'
                         }}>
-                            For Generations Ahead.
+
+                            For Generations <br />Ahead.
                         </h1>
                     </TextReveal>
                 </div>
@@ -97,13 +98,19 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
                 >
-                    <Link href="#contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
+                    <a
+                        href="https://wa.me/918089775753?text=Hi, I'm interested in working with Nature's Best."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                        style={{ textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1.1rem' }}
+                    >
                         <span>Work with us</span>
                         {/* Simple Arrow Icon */}
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </Link>
+                    </a>
                 </motion.div>
             </div>
 
