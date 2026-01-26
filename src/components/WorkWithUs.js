@@ -23,7 +23,7 @@ export default function WorkWithUs() {
                     zIndex: 1
                 }}>
                     <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>
-                        Work with <br /> <span className="serif-italic">Nature's Best</span>
+                        Work with <br /> <span className="serif-bold-white">Nature's Best</span>
                     </h2>
                     <p style={{ opacity: 0.9, marginBottom: '3rem', maxWidth: '400px', fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)' }}>
                         Join our mission to restore biodiversity and create sustainable ecosystems. We are always looking for passionate partners and team members.

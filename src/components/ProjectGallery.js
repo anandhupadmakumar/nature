@@ -38,7 +38,7 @@ export default function ProjectGallery() {
                 transition={{ duration: 0.8 }}
                 style={{ marginBottom: '4rem', textAlign: 'center' }}
             >
-                <h2 className="serif-italic" style={{ fontSize: '3rem', color: 'var(--color-primary-dark)' }}>Our Impact</h2>
+                <h2 className="serif-bold-white" style={{ fontSize: '3rem', color: 'var(--color-primary-dark)' }}>Our Impact</h2>
                 <p style={{ maxWidth: '600px', margin: '1rem auto', opacity: 0.7 }}>
                     Witnessing the transformation, one sapling at a time.
                 </p>

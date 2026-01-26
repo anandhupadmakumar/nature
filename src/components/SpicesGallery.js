@@ -16,7 +16,7 @@ export default function SpicesGallery() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '4rem' }}>
                     <div>
                         <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.6 }}>From our plantations</span>
-                        <h2 className="serif-italic" style={{ fontSize: '3rem', color: 'var(--color-primary-dark)' }}>Organic Spices</h2>
+                        <h2 className="serif-bold-white" style={{ fontSize: '3rem', color: 'var(--color-primary-dark)' }}>Organic Spices</h2>
                     </div>
                     <button style={{
                         background: 'transparent',

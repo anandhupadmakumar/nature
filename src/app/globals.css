@@ -85,11 +85,11 @@ p {
   color: var(--color-text-secondary);
 }
 
-.serif-italic {
-  font-family: 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: white;
+.serif-bold-white {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .text-highlight {

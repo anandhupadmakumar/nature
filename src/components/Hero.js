@@ -68,7 +68,7 @@ export default function Hero() {
                             margin: 0,
                             color: '#ffffff'
                         }}>
-                            Growing <span className="serif-italic">Nature’s Best</span>,
+                            Growing <span className="serif-bold-white">Nature’s Best</span>,
                         </h1>
                     </TextReveal>
                     <TextReveal delay={0.2} immediate={true}>

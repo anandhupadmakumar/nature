@@ -53,7 +53,7 @@ export default function MarqueeSection() {
                             color: 'var(--color-text-main)', // Dark text for white theme
                             opacity: 0.6, // Higher opacity
                             fontFamily: partner.font,
-                            fontStyle: partner.font.includes('serif') ? 'italic' : 'normal',
+                            fontStyle: 'normal',
                             whiteSpace: 'nowrap',
                             cursor: 'default',
                             transition: 'all 0.3s ease'

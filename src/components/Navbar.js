@@ -79,7 +79,7 @@ export default function Navbar() {
                                 }}
                             />
                         </div> */}
-                        <span className="serif-italic" style={{ color: 'inherit', fontSize: '1.2rem' }}>Nature's Best</span><span style={{ color: 'var(--color-primary-dark)' }}>.</span>
+                        <span className="serif-bold-white" style={{ color: 'inherit', fontSize: '1.2rem' }}>Nature's Best</span><span style={{ color: 'var(--color-primary-dark)' }}>.</span>
                     </div>
                 </Link>
 

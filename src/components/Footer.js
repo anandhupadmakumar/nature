@@ -17,7 +17,7 @@ export default function Footer() {
                         style={{ objectFit: 'contain', borderRadius: '50%' }}
                     />
                 </div>
-                <h2 className="serif-italic" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Greengrove.</h2>
+                <h2 className="serif-bold-white" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Greengrove.</h2>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', opacity: 0.8 }}>
                     <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Experiences</a>
                     <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>About</a>
