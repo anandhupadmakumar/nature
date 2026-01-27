@@ -53,17 +53,18 @@ export default function AboutSection() {
                             lineHeight: 1.1,
                             color: 'var(--color-text-main)' // Dark Text
                         }}>
-                            Expert Landscaping,<br />
-                            Personalized for You
+                            Cultivating Farms, Living Spaces,<br />
+                            and Everything Between
                         </h2>
                     </TextReveal>
 
                     <div style={{ maxWidth: '600px', marginBottom: '1rem' }}>
                         <TextReveal delay={0.2}>
                             <p style={{ fontSize: '1.25rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
-                                At Greengrove, we create beautiful, functional outdoor spaces with care and expertise.
-                                From design to maintenance, our team delivers professional landscaping solutions
-                                tailored to your home, ensuring every garden looks its best year-round.
+                                Green Grove Plantations grows and manages its own plantations—ginger, banana,
+                                vegetables, and spices—while developing farmhouses, gardens, and Miyawaki forests.
+                                We also nurture exotic birds, plants, and animals, focusing on thoughtful care,
+                                balance, and long-term stewardship.
                             </p>
                         </TextReveal>
                     </div>

@@ -18,13 +18,13 @@ export default function Footer() {
                     />
                 </div>
                 <h2 className="serif-bold-white" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Greengrove.</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', opacity: 0.8 }}>
+                <div className="serif-bold-white" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', opacity: 0.8 }}>
                     <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Experiences</a>
                     <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>About</a>
                     <a href="https://wa.me/918089775753?text=Hi, I'd like to get in touch." target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
                 </div>
-                <p style={{ opacity: 0.5, fontSize: '0.8rem' }}>
-                    &copy; {new Date().getFullYear()} Greengrove Plantations. All rights reserved.
+                <p style={{ opacity: 0.7, fontSize: '0.8rem', color: '#ffffff' }}>
+                    &copy; 2026 Greengrove Plantations. All rights reserved.
                 </p>
             </div>
         </footer>

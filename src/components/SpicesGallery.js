@@ -11,7 +11,7 @@ const spices = [
 
 export default function SpicesGallery() {
     return (
-        <section className="section" style={{ background: '#fcfdfc' }}>
+        <section className="section" style={{ background: '#fcfdfc', paddingTop: '2rem' }}>
             <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '4rem' }}>
                     <div>
@@ -28,7 +28,19 @@ export default function SpicesGallery() {
                     }}>View All Products</button>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
+                <div
+                    className="spices-scroll-container"
+                    style={{
+                        display: 'flex',
+                        gap: '2rem',
+                        overflowX: 'auto',
+                        paddingBottom: '2rem',
+                        msOverflowStyle: 'none',
+                        scrollbarWidth: 'none',
+                        cursor: 'grab',
+                        scrollSnapType: 'x mandatory'
+                    }}
+                >
                     {spices.map((spice, index) => (
                         <motion.div
                             key={index}
@@ -36,20 +48,27 @@ export default function SpicesGallery() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            style={{ position: 'relative', group: 'card' }}
+                            style={{
+                                minWidth: '300px',
+                                flexShrink: 0,
+                                scrollSnapAlign: 'start',
+                                position: 'relative'
+                            }}
                         >
                             <div style={{
                                 borderRadius: '20px',
                                 overflow: 'hidden',
                                 height: '350px',
                                 position: 'relative',
-                                marginBottom: '1rem'
+                                marginBottom: '1.5rem',
+                                boxShadow: '0 8px 25px rgba(0,0,0,0.05)'
                             }}>
                                 <Image
                                     src={spice.image}
                                     alt={spice.name}
                                     fill
                                     style={{ objectFit: 'cover' }}
+                                    className="hover-scale"
                                 />
                                 <div style={{
                                     position: 'absolute',
@@ -62,22 +81,34 @@ export default function SpicesGallery() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                                    cursor: 'pointer'
+                                    boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                                    cursor: 'pointer',
+                                    zIndex: 2
                                 }}>
-                                    <a href={`https://wa.me/918089775753?text=I would like to order ${spice.name}`} target="_blank" rel="noopener noreferrer">
+                                    <a href={`https://wa.me/918089775753?text=I would like to order ${spice.name}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary-dark)', display: 'flex' }}>
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <path d="M5 12h14M12 5l7 7-7 7" />
                                         </svg>
                                     </a>
                                 </div>
                             </div>
-                            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>{spice.name}</h3>
-                            <p style={{ fontSize: '0.9rem', opacity: 0.6 }}>{spice.price}</p>
+                            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.4rem', color: 'var(--color-text-main)', fontWeight: 600 }}>{spice.name}</h3>
+                            <p style={{ fontSize: '0.9rem', opacity: 0.6, color: 'var(--color-text-secondary)' }}>{spice.price}</p>
                         </motion.div>
                     ))}
                 </div>
             </div>
+            <style jsx global>{`
+                .spices-scroll-container::-webkit-scrollbar {
+                    display: none;
+                }
+                .hover-scale {
+                    transition: transform 0.5s ease;
+                }
+                .hover-scale:hover {
+                    transform: scale(1.05);
+                }
+            `}</style>
         </section>
     );
 }
