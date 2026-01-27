@@ -70,22 +70,22 @@ export default function ServicesSection() {
         {
             title: "Our Plantations",
             description: "Ginger, banana, vegetables, and spices cultivated and managed directly on our own plantations.",
-            image: "/assets/service_plantation.png"
+            image: "/assets/WhatsApp Image 2026-01-26 at 22.13.38.jpeg"
         },
         {
             title: "Farmhouse Development & Care",
             description: "Design, development, and ongoing management of farmhouses with exotic plants, animals, and birds.",
-            image: "/assets/service_farmhouse.png"
+            image: "/assets/cow_farm.jpeg"
         },
         {
             title: "Plantation Management",
             description: "End-to-end plantation maintenance, monitoring, and long-term care.",
-            image: "/assets/service_management.png"
+            image: "/assets/WhatsApp Image 2026-01-26 at 22.13.39 (1).jpeg"
         },
         {
             title: "Exotic Fruit Collection",
             description: "A curated collection of 800+ exotic fruit varieties, available for online sale.",
-            image: "/assets/service_fruits.png"
+            image: "/assets/fruit.jpeg"
         }
     ];
 
