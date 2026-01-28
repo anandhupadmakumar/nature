@@ -34,14 +34,14 @@ function Counter({ from, to, duration = 2 }) {
 
 export default function StatsSection() {
     const stats = [
-        { label: "Trees Planted", value: 125000, suffix: "+" },
-        { label: "Acres Restored", value: 8500, suffix: " ha" },
-        { label: "Species Protected", value: 142, suffix: "" },
-        { label: "CO₂ Offset", value: 45000, suffix: " tons" },
+        { label: "Trees Planted", value: 25000, suffix: "+" },
+        { label: "Acres Restored", value: 150, suffix: " ha" },
+
+        { label: "CO₂ Offset", value: 1000, suffix: " tons" },
     ];
 
     return (
-        <section className="section" style={{ background: 'var(--color-primary-dark)', color: 'white' ,marginBottom: '2rem'}}>
+        <section className="section" style={{ background: 'var(--color-primary-dark)', color: 'white', marginBottom: '2rem' }}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', textAlign: 'center' }}>
                 {stats.map((stat, index) => (
                     <motion.div
